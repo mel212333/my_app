@@ -1,0 +1,26 @@
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div
+      *ngFor="let movie of movies"
+      class="swiper-slide"
+      [ngStyle]="{
+        'background-size': 'cover',
+        'background-image':
+          'url(https://image.tmdb.org/t/p/w500' + movie.backdrop_path + ')'
+      }"
+    >
+      <div class="movie-description">
+        <h3>
+          {{ movie.title }}
+          <button class="btn btn-outline-link btn-sm" (click)="detalle(movie)">Detalle</button>
+        </h3>
+        <p>{{ movie.overview | slice : 0 : 140 }} ...</p>
+         <!-- slice : 0 : 140 }} ... Bajo la cantidad de texto en el detalle -->
+      </div>
+    </div>
+  </div>
+  <div class="swiper-pagination" (click)="onSilderPrev()"></div>
+  <div class="swiper-button-prev" (click)="next()"></div>
+  <div class="swiper-button-next"></div>
+
+</div>

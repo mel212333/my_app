@@ -1,0 +1,33 @@
+.swiper-slide {
+  position: relative;
+  display: flex;
+  align-items: flex-end; /* Alinea el contenido en la parte inferior del slide */
+  justify-content: flex-start; /* Alinea el contenido al inicio del slide */
+  height: 400px; /* Ajusta según sea necesario */
+  color: white; /* Para que el texto sea visible */
+}
+
+.movie-description {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con transparencia */
+  color: white; /* Color del texto */
+  padding: 20px; /* Espacio alrededor del contenido */
+  width: 100%; /* Ocupa todo el ancho del slide */
+  display: flex;
+  flex-direction: column; /* Alinea el título y la descripción en columna */
+}
+
+.movie-description h3 {
+  margin: 0 0 10px 0; /* Espaciado inferior entre el título y la descripción */
+  font-size: 24px; /* Tamaño del título */
+}
+
+.movie-description p {
+  margin: 0; /* Sin margen adicional */
+  font-size: 16px; /* Tamaño del texto de la descripción */
+}
+
+.btn-outline-link {
+  margin-left: 10px; /* Espacio entre el título y el botón de detalles */
+  color: white; /* Color del texto del botón */
+  border: 1px solid white; /* Borde del botón */
+}
