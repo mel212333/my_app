@@ -21,7 +21,7 @@ export class PeliculasPosterGridComponent {
   }
 
   ngOnInit() {
-    console.log(this.movies);
+    console.log("poster grid",this.movies);
   }
 
   onMovieClick(movie: Movie) {

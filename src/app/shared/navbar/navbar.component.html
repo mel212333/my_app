@@ -13,18 +13,23 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <!-- Otros elementos de navegación si es necesario -->
-      </ul>
+      <ul class="navbar-nav me-auto"></ul>
+
       <div class="d-flex ms-auto">
         <form class="d-flex">
           <input
+            #txtBuscar
+            (keyup.enter)="buscarPelicula(txtBuscar.value)"
             class="form-control me-2"
             type="search"
             placeholder="Buscar Pelicula"
             aria-label="search"
           />
-          <button class="btn btn-outline-secondary" type="submit">
+          <button
+            class="btn btn-outline-secondary"
+            type="submit"
+            (click)="buscarPelicula(txtBuscar.value)"
+          >
             Buscar
           </button>
         </form>

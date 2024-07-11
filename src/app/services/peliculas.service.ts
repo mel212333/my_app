@@ -37,6 +37,12 @@ export class PeliculasService {
         })
       );
   }
+  buscarPeliculas(texto: string): Observable<Movie[]> {
+    const params = { ...this.params, page: 1, query: texto };
+    return this.http
+      .get<PeliculasResponse>(`${this.serverURL}/search/movie`, { params })
+      .pipe(map((res) => res.results || []));
+  }
   resetPeliculaPage() {
     this.peliculaPage = 1;
   }
