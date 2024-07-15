@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map, tap, of } from 'rxjs';
+import { Observable, map, tap, of, catchError } from 'rxjs';
 import { Movie, PeliculasResponse } from '../interfaces/peliculas.interfaces';
+import { MovieDetails } from '../interfaces/pelicula.interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -43,6 +44,15 @@ export class PeliculasService {
       .get<PeliculasResponse>(`${this.serverURL}/search/movie`, { params })
       .pipe(map((res) => res.results || []));
   }
+  //pelicula por id
+  getPeliculasDetails(id: string) {
+    return this.http
+      .get<MovieDetails>(`${this.serverURL}/movie/${id}`, {
+        params: this.params,
+      })
+      .pipe(catchError((err) => of(null)));
+  }
+
   resetPeliculaPage() {
     this.peliculaPage = 1;
   }

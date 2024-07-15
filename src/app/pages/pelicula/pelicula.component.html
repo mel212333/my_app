@@ -1,1 +1,8 @@
-<p>pelicula works!</p>
+<div class="row" *ngIf="pelicula">
+  <div class="col-md-6">
+    <img [src]="pelicula.poster_path | poster" [alt]="pelicula.title" />
+  </div>
+  <div class="col-md-6 mt-2">
+    <h3>{{ pelicula.title }}</h3>
+  </div>
+</div>
