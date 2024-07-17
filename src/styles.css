@@ -1,21 +1,38 @@
 body {
   background-color: #14161e;
 }
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-weight: 200;
-  color: white;
+h1,h2,h3,h4,h5 {
+    font-weight: 200;
+    color: white;
 }
 
 p {
-  color: white;
+    color: white;
 }
-hr {
-  color: white;
+
+hr{
+    color: white;
 }
-.cursor {
-  cursor: pointer;
+
+.navbar-brand {
+    font-weight: 200;
+    color: #bd4c5f !important;
+}
+
+.btn-outline-success {
+    border-color: #bd4c5f !important;;
+    color: #bd4c5f !important;;
+}
+
+.btn-outline-success:hover {
+    background-color: #272a36;
+    color: white !important;
+}
+
+.block {
+    display:block;
+}
+
+.cursor{
+    cursor:pointer;
 }
