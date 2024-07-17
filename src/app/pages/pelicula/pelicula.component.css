@@ -1,0 +1,8 @@
+/* styles.css o styles.scss */
+.texto-grande {
+  font-size: 2.25rem; /* Puedes ajustar el tamaño según lo necesites */
+}
+
+.texto-parrafo {
+  font-size: 1.25rem; /* Puedes ajustar el tamaño según lo necesites */
+}

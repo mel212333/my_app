@@ -6,8 +6,13 @@
     <h3>{{ pelicula.title }}</h3>
     <div class="row">
       <div class="col-10 text-white">
-        Like: {{pelicula.vote_average | number:"1.1-2"}}
-        
+        Like: {{ pelicula.vote_average | number : "1.1-2" }}
+      </div>
+    </div>
+    <div class="row mt-3">
+  <h3 class="texto-grande">Sinopsis:</h3>
+      <div class="col text-white text-justify">
+        {{ pelicula.overview }}
       </div>
     </div>
   </div>
