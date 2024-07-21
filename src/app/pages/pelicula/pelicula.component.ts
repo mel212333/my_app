@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { Cast } from 'src/app/interfaces/credits.interfaces';
 import { MovieDetails } from 'src/app/interfaces/pelicula.interfaces';
 import { PeliculasService } from 'src/app/services/peliculas.service';
 
@@ -11,7 +12,7 @@ import { PeliculasService } from 'src/app/services/peliculas.service';
 export class PeliculaComponent {
   //GET /movie/{movie:id}/credits
   pelicula?: MovieDetails;
-
+ cast : Cast[] =[];
   constructor(
     private peliculasServices: PeliculasService,
     private activateRouter: ActivatedRoute,
@@ -28,5 +29,12 @@ export class PeliculaComponent {
       }
       this.pelicula = movie;
     });
-  }
-}
+    this.peliculasServices.getCast(id).subscribe((cast) => {
+      //copntrola si no hay pelicula
+      if (!cast) {
+        this.router.navigateByUrl('/'); //si la ruta directamente esta vacia se vuelve a Home
+        return;
+      }
+      this.cast = cast;
+    });
+  }}

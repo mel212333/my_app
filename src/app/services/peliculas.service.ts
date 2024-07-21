@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, map, tap, of, catchError } from 'rxjs';
 import { Movie, PeliculasResponse } from '../interfaces/peliculas.interfaces';
 import { MovieDetails } from '../interfaces/pelicula.interfaces';
+import { Cast, Credits } from '../interfaces/credits.interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -51,6 +52,15 @@ export class PeliculasService {
         params: this.params,
       })
       .pipe(catchError((err) => of(null)));
+  }
+  //cedits
+  getCast(id: string): Observable<Cast[]> {
+    return this.http
+      .get<Credits>(`${this.serverURL}/movie/${id}/credits`, {
+        params: this.params,
+      })
+      .pipe(map((res) => res.cast),
+    catchError(err => of([])));
   }
 
   resetPeliculaPage() {
