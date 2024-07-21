@@ -15,5 +15,11 @@ import { PipesModule } from '../pipes/pipes.module';
     PeliculasPosterGridComponent,
   ],
   imports: [CommonModule, SharedModule, PipesModule],
+  exports: [
+    HomeComponent,
+    PeliculaComponent,
+    BuscarComponent,
+    PeliculasPosterGridComponent,
+  ],
 })
 export class PagesModule {}

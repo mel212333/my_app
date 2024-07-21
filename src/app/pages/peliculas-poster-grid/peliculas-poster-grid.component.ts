@@ -9,7 +9,7 @@ import { Movie } from 'src/app/interfaces/peliculas.interfaces';
   styleUrls: ['./peliculas-poster-grid.component.css'],
 })
 export class PeliculasPosterGridComponent {
-  @Input() movies?: Movie[];
+  @Input() movies?: Movie[] = [];
 
   constructor(
     //private config: NgbRatingConfig,
@@ -21,11 +21,11 @@ export class PeliculasPosterGridComponent {
   }
 
   ngOnInit() {
-    console.log("poster grid",this.movies);
+    console.log('poster grid', this.movies);
   }
 
   onMovieClick(movie: Movie) {
     this.router.navigate(['/pelicula', movie.id]);
-    console.log('---', movie);
+    console.log('---', movie.title);
   }
 }
